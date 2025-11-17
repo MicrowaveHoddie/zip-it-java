@@ -4,6 +4,10 @@
 package org.example;
 
 import org.junit.jupiter.api.Test;
+
+import java.util.ArrayList;
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class AppTest {
@@ -11,4 +15,43 @@ class AppTest {
         App classUnderTest = new App();
         assertNotNull(classUnderTest.getGreeting(), "app should have a greeting");
     }
+
+    @Test void testStringMerge(){
+        ArrayList<String> list1 = new ArrayList<>();
+        ArrayList<String> list2 = new ArrayList<>();
+        list1.add("1");
+        list2.add("2");
+        System.out.println(Zip.merge(list1,list2));
+    }
+
+    @Test void testIntMerge(){
+        ArrayList<Integer> list1 = new ArrayList<>();
+        ArrayList<Integer> list2 = new ArrayList<>();
+        list1.add(1);
+        list2.add(2);
+        System.out.println(Zip.merge(list1,list2));
+    }
+
+    @Test void testCharMerge(){
+        ArrayList<Character> list1 = new ArrayList<>();
+        ArrayList<Character> list2 = new ArrayList<>();
+        list1.add('C');
+        list2.add('F');
+        System.out.println(Zip.merge(list1,list2));
+    }
+
+    @Test void testDoubleMerge(){
+        ArrayList<Double> list1 = new ArrayList<>();
+        ArrayList<Double> list2 = new ArrayList<>();
+        list1.add(1.0);
+        list2.add(2.0);
+        System.out.println(Zip.merge(list1,list2));
+    }
+
+    @Test void testUnevenMerge(){
+        List<Integer> list1 = List.of(1,3,4,5);
+        List<Integer> list2 = List.of(2);
+        System.out.println(Zip.merge(list1,list2));
+    }
+
 }

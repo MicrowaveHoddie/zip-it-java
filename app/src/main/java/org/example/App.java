@@ -3,12 +3,37 @@
  */
 package org.example;
 
+import java.util.List;
+
 public class App {
     public String getGreeting() {
-        return "Hello World!";
+        return "Hello and welcome to the ArrayList/List merger program!";
     }
 
     public static void main(String[] args) {
         System.out.println(new App().getGreeting());
+
+        List<Integer> nums1 = List.of(1, 3, 5, 7);
+        System.out.println("nums1: " + nums1);
+        List<Integer> nums2 = List.of(2, 4, 6, 8);
+        System.out.println("nums2: " + nums2);
+        List<Integer> mergedNumbers = Zip.merge(nums1, nums2);
+        System.out.println("mergedNumbers: " + mergedNumbers);
+
+        List<String> colors1 = List.of("Red", "Green", "Blue");
+        System.out.println("colors1: " + colors1);
+        List<String> colors2 = List.of("White", "Black", "Orange", "Pink", "Fuschia");
+        System.out.println("colors2: " + colors2);
+        List<String> mergedWords = Zip.merge(colors1, colors2);
+        System.out.println("mergedWords: " + mergedWords);
+
+        List<Double> double1 = List.of(1.2, 3.1, 6.7, 8.8, 9.34);
+        System.out.println("double1: " + double1);
+        List<Double> double2 = List.of(2.11, 5.22342, 7.8726);
+        System.out.println("double2: " + double2);
+        List<Double> mergedDouble = Zip.merge(double1, double2);
+        System.out.println("mergedDouble: " + mergedDouble);
+
+        System.out.println("Goodbye!");
     }
 }
